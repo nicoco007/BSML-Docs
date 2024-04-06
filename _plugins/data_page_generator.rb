@@ -6,7 +6,7 @@
 module Jekyll
 
   module Sanitizer
-    # strip characters and whitespace to create valid filenames, also lowercase
+    # strip characters and whitespace to create valid filenames
     def sanitize_filename(name)
       if(name.is_a? Integer)
         return name.to_s
@@ -14,7 +14,7 @@ module Jekyll
       return name.tr(
   "ÀÁÂÃÄÅàáâãäåĀāĂăĄąÇçĆćĈĉĊċČčÐðĎďĐđÈÉÊËèéêëĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħÌÍÎÏìíîïĨĩĪīĬĭĮįİıĴĵĶķĸĹĺĻļĽľĿŀŁłÑñŃńŅņŇňŉŊŋÑñÒÓÔÕÖØòóôõöøŌōŎŏŐőŔŕŖŗŘřŚśŜŝŞşŠšſŢţŤťŦŧÙÚÛÜùúûüŨũŪūŬŭŮůŰűŲųŴŵÝýÿŶŷŸŹźŻżŽž",
   "AAAAAAaaaaaaAaAaAaCcCcCcCcCcDdDdDdEEEEeeeeEeEeEeEeEeGgGgGgGgHhHhIIIIiiiiIiIiIiIiIiJjKkkLlLlLlLlLlNnNnNnNnnNnNnOOOOOOooooooOoOoOoRrRrRrSsSsSsSssTtTtTtUUUUuuuuUuUuUuUuUuUuWwYyyYyYZzZzZz"
-).downcase.strip.gsub(' ', '-').gsub(/[^\w.-]/, '')
+).strip.gsub(' ', '-').gsub(/[^\w.-]/, '')
     end
   end
 
